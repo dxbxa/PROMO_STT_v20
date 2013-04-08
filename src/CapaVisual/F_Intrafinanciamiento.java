@@ -489,12 +489,18 @@ String  pplazo= cmbplazo.getSelectedItem().toString();
                 }
             }
             if(datosLlenos){
-            objGestorV.guardaFormularioFinanciamientosV(pproducto, ptipo, pcod_usuario, ptarjeta, pnombre_contacto, pcedula, pmonto_d, pmoneda_d, pcomision, ptasa, pseguro, psinpe, ptelefono, pbanco, pmoneda_banco, pvencimiento, pcuota, pplazo);
-            String[] encabezados ={"PRODUCTO","TIPO","COD_USUARIO","NOMBRE_CONTACTO","MONTO_DESEMBOLSO","MONEDA_DESEMBOLSO","BANCO_DESTINO","PLAZO"};
-            tblResumen.setModel(new javax.swing.table.DefaultTableModel(objGestorV.getResumenFinanciamiento(pcod_usuario, pcedula),encabezados));
-            JOptionPane.showMessageDialog(rootPane, "FORMULARIO SALVADO CON ÉXITO", "SALVAR FORMULARIO", JOptionPane.INFORMATION_MESSAGE); 
+                if(objGestorV.validaDuplicadosFinanciamiento(ptarjeta,ptipo)){
+                        objGestorV.guardaFormularioFinanciamientosV(pproducto, ptipo, pcod_usuario, ptarjeta, pnombre_contacto, pcedula, pmonto_d, pmoneda_d, pcomision, ptasa, pseguro, psinpe, ptelefono, pbanco, pmoneda_banco, pvencimiento, pcuota, pplazo);
+                        String[] encabezados ={"PRODUCTO","TIPO","COD_USUARIO","NOMBRE_CONTACTO","MONTO_DESEMBOLSO","MONEDA_DESEMBOLSO","BANCO_DESTINO","PLAZO"};
+                        tblResumen.setModel(new javax.swing.table.DefaultTableModel(objGestorV.getResumenFinanciamiento(pcod_usuario, pcedula),encabezados));
+                        JOptionPane.showMessageDialog(rootPane, "FORMULARIO SALVADO CON ÉXITO", "SALVAR FORMULARIO", JOptionPane.INFORMATION_MESSAGE); 
+
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "Ya existe este registro", "FORMULARIO DE FINANCIAMIENTOS", JOptionPane.WARNING_MESSAGE);
+                }
+          
             }else{
-                JOptionPane.showMessageDialog(rootPane, "Hay campos obligatorios en blanco", "FORMULARIO DE PA", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(rootPane, "Hay campos obligatorios en blanco", "FORMULARIO DE FINANCIAMIENTOS", JOptionPane.WARNING_MESSAGE);
             }
         }catch (Exception ex){
             System.out.println(ex);

@@ -83,6 +83,9 @@ public class A_Gestor_Logico {
     public String   getDatosCod_ProyectoIU(){
       return objUsuario.getPROYECTO().getCOD_PROYECTO();
 }
+    public String   getNombre_Base_Contacto(){
+      return objContacto.getNOMBRE_BASE();
+}
     public String   getDatosDesc_ProyectoIU(){
       return objUsuario.getPROYECTO().getDESC_PROYECTO();
 }
@@ -366,5 +369,17 @@ public void setCD_FINANC(String phora_venta,String ptarjeta)throws Exception{
     }
     
     // </editor-fold>
+    
+    public boolean validaDuplicadosPPT_Alerta(String ptarjeta)throws Exception{
+return objConexion.validaDuplicadosPPT_Alerta(ptarjeta);    
+    }
+    
+    public boolean validaDuplicadosFinanciamiento(String ptarjeta, String pproducto)throws Exception{
+return objConexion.validaDuplicadosFinanciamiento(ptarjeta, pproducto);     
+    }
+    
+    public boolean validaDuplicadosCAU(String ptarjeta, String pproducto, String pIdProducto)throws Exception{
+return objConexion.validaDuplicadosCAU(ptarjeta, pproducto, pIdProducto);   
+    }
 
 }

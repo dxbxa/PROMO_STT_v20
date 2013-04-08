@@ -356,11 +356,16 @@ public class F_Cargos extends javax.swing.JFrame {
                 }
             }
             if(datosLlenos){
-                objGestorV.Llamada_GuardarFormularioCAU(datos);
-                String[] encabezados ={"Cédula","Servicio","Identificador"};
-                tblCargosAutomaticos.setModel(new javax.swing.table.DefaultTableModel(objGestorV.getFormularioCAUresumen(objGestorV.getContactos()[0]),encabezados));
-                JOptionPane.showMessageDialog(rootPane, "FORMULARIO SALVADO CON ÉXITO", "SALVAR FORMULARIO", JOptionPane.INFORMATION_MESSAGE); 
-            }else{
+                if(objGestorV.validaDuplicadosCAU(tarjetaContacto, Servicio, identificador)){
+                    objGestorV.Llamada_GuardarFormularioCAU(datos);
+                    String[] encabezados ={"Cédula","Servicio","Identificador"};
+                    tblCargosAutomaticos.setModel(new javax.swing.table.DefaultTableModel(objGestorV.getFormularioCAUresumen(objGestorV.getContactos()[0]),encabezados));
+                    JOptionPane.showMessageDialog(rootPane, "FORMULARIO SALVADO CON ÉXITO", "SALVAR FORMULARIO", JOptionPane.INFORMATION_MESSAGE); 
+
+                }else{
+                    JOptionPane.showMessageDialog(rootPane, "Ya existe este registro", "FORMULARIO DE CARGOS", JOptionPane.WARNING_MESSAGE);
+            }
+             }else{
                 JOptionPane.showMessageDialog(rootPane, "Hay campos obligatorios en blanco", "FORMULARIO DE CARGOS", JOptionPane.WARNING_MESSAGE);
             }
             

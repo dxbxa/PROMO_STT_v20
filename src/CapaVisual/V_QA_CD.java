@@ -4,10 +4,9 @@ package CapaVisual;
 import java.awt.GraphicsEnvironment;
 
 public class V_QA_CD extends javax.swing.JFrame {
-    
+
     private A_Gestor_Visual objGestorV;
     private int tipo;
-
 
     public V_QA_CD(A_Gestor_Visual pobjGestorV,int pTipo) {
         tipo=pTipo;
@@ -25,7 +24,7 @@ public class V_QA_CD extends javax.swing.JFrame {
         llenaDatosLista();
 
     }
-    
+
     private void llenaDatosLista(){
 try{
         if(tipo==1){

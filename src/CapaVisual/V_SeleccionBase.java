@@ -2,9 +2,17 @@
 package CapaVisual;
 
 import java.awt.GraphicsEnvironment;
+import javax.swing.RowSorter;
+import javax.swing.RowSorter.SortKey;
+import javax.swing.table.TableRowSorter;
+import javax.swing.table.TableModel;
+import java.util.*;
 
 public class V_SeleccionBase extends javax.swing.JFrame {
 private A_Gestor_Visual objGestorV;
+private List<? extends RowSorter.SortKey> sortKeys;
+private TableRowSorter<TableModel> sorter;
+private int seleccion;
 
     public V_SeleccionBase(A_Gestor_Visual pobjGestorV) {
         objGestorV=pobjGestorV;
@@ -18,28 +26,36 @@ private A_Gestor_Visual objGestorV;
         this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
         
         llenaDatosLista();
-        
     }
 
     public void llenaDatosLista(){
 
             try{
 
-            String[] encabezadoA={"CEDULA","NOMBRE","PLAN","METAL","LIMITE","VENCIMIENTO","PROMESA GENERAL","FECHA PROMESA","ESTATUS"};
+            String[] encabezadoA={"CEDULA","NOMBRE","BASE","PLAN","METAL","LIMITE","VENCIMIENTO","PROMESA GENERAL","FECHA PROMESA","ESTATUS"};
             String[][] contenidoA;
             contenidoA=objGestorV.getBaseAsesor();
             tblSeleccionBase.setModel(new javax.swing.table.DefaultTableModel(contenidoA,encabezadoA));
             tblSeleccionBase.getColumnModel().getColumn(0).setPreferredWidth(100);
             tblSeleccionBase.getColumnModel().getColumn(1).setPreferredWidth(250);
             tblSeleccionBase.getColumnModel().getColumn(2).setPreferredWidth(100);
-            tblSeleccionBase.getColumnModel().getColumn(3).setPreferredWidth(250);
-            tblSeleccionBase.getColumnModel().getColumn(4).setPreferredWidth(100);
+            tblSeleccionBase.getColumnModel().getColumn(3).setPreferredWidth(100);
+            tblSeleccionBase.getColumnModel().getColumn(4).setPreferredWidth(250);
             tblSeleccionBase.getColumnModel().getColumn(5).setPreferredWidth(100);
-            tblSeleccionBase.getColumnModel().getColumn(6).setPreferredWidth(250);
-            tblSeleccionBase.getColumnModel().getColumn(7).setPreferredWidth(150);
-            tblSeleccionBase.getColumnModel().getColumn(8).setPreferredWidth(100);
+            tblSeleccionBase.getColumnModel().getColumn(6).setPreferredWidth(100);
+            tblSeleccionBase.getColumnModel().getColumn(7).setPreferredWidth(250);
+            tblSeleccionBase.getColumnModel().getColumn(8).setPreferredWidth(150);
+            tblSeleccionBase.getColumnModel().getColumn(9).setPreferredWidth(100);
 
-          
+          try{
+                System.out.println("INTENTO DE ORDEN");
+                sorter.setSortKeys(sortKeys);
+                tblSeleccionBase.setRowSorter(sorter);
+                tblSeleccionBase.setRowSelectionInterval(seleccion, seleccion);
+                //tblSeleccionBase.setAutoCreateRowSorter(true);
+          }catch(Exception ex){
+              System.out.println("error poniendo orden******************************************"+ex);
+          }
             }catch(Exception ex){
                 System.out.println("objGestorV.getDatosAuditarPPT:"+ex);
             }       
@@ -142,12 +158,18 @@ private A_Gestor_Visual objGestorV;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+       try{
+           sorter = new TableRowSorter<TableModel>(tblSeleccionBase.getModel());
+           sortKeys = tblSeleccionBase.getRowSorter().getSortKeys();
+           seleccion= tblSeleccionBase.getSelectedRow();
+       }catch(Exception ex){
+           System.out.println("Row sorter"+ex);
+       }
+
         try{
             int indice=tblSeleccionBase.getSelectedRow();
             String cedula = tblSeleccionBase.getValueAt(indice, 0).toString();
-            //String[][] datos = objGestorV.getBaseAsesor();
             objGestorV.btn_BuscarsELECCION(1, cedula);
-            
         }catch(Exception ex){
             System.out.println(ex);
         }

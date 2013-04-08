@@ -359,4 +359,21 @@ public class A_Gestor_Visual{
     public String[][] getCD_E_I()throws Exception{
         return objGestorL.getCD_E_I();
     }
+    
+    public boolean validaDuplicadosPPT_Alerta(String ptarjeta)throws Exception{
+return objGestorL.validaDuplicadosPPT_Alerta(ptarjeta);    
+    }
+    
+    public boolean validaDuplicadosFinanciamiento(String ptarjeta, String pproducto)throws Exception{
+return objGestorL.validaDuplicadosFinanciamiento(ptarjeta, pproducto);     
+    }
+    
+    public boolean validaDuplicadosCAU(String ptarjeta, String pproducto, String pIdProducto)throws Exception{
+return objGestorL.validaDuplicadosCAU(ptarjeta, pproducto, pIdProducto);    
+    }
+    
+    public String   getNombre_Base_Contacto(){
+      return objGestorL.getNombre_Base_Contacto();
+}
+    
 }

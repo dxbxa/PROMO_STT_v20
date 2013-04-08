@@ -344,12 +344,18 @@ public class F_PPT extends javax.swing.JFrame {
                 }
             }
             if(datosLlenos){
-            objGestorV.Llamada_GuardarFormularioPA(datos);
-            String[] encabezados ={"Cédula","Nombre","Producto","Tipo","Cierre"};
-            tblResumen.setModel(new javax.swing.table.DefaultTableModel(objGestorV.getFormularioPAresumen(cedula),encabezados));
-            JOptionPane.showMessageDialog(rootPane, "FORMULARIO SALVADO CON ÉXITO", "SALVAR FORMULARIO", JOptionPane.INFORMATION_MESSAGE); 
-            }else{
-                JOptionPane.showMessageDialog(rootPane, "Hay campos obligatorios en blanco", "FORMULARIO DE PA", JOptionPane.WARNING_MESSAGE);
+                if(objGestorV.validaDuplicadosPPT_Alerta(tarjeta)){
+                    objGestorV.Llamada_GuardarFormularioPA(datos);
+                    String[] encabezados ={"Cédula","Nombre","Producto","Tipo","Cierre"};
+                    tblResumen.setModel(new javax.swing.table.DefaultTableModel(objGestorV.getFormularioPAresumen(cedula),encabezados));
+                    JOptionPane.showMessageDialog(rootPane, "FORMULARIO SALVADO CON ÉXITO", "SALVAR FORMULARIO", JOptionPane.INFORMATION_MESSAGE); 
+
+                }else{
+                      JOptionPane.showMessageDialog(rootPane, "Ya existe este registro", "FORMULARIO DE PPT", JOptionPane.WARNING_MESSAGE);
+                
+                }
+           }else{
+                JOptionPane.showMessageDialog(rootPane, "Hay campos obligatorios en blanco", "FORMULARIO DE PPT", JOptionPane.WARNING_MESSAGE);
             }
         }catch (Exception ex){
             System.out.println(ex);

@@ -25,7 +25,7 @@ public class BD_ConectorBD{
 //System.out.println(query);
        String resultado[]=null;
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -76,7 +76,7 @@ public class BD_ConectorBD{
        String resultado[][]=null;
 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -122,7 +122,7 @@ public class BD_ConectorBD{
        String resultado[]=null;
 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -165,7 +165,7 @@ public class BD_ConectorBD{
        String resultado[]=null;
 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -207,7 +207,7 @@ System.out.println(query);
        String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -341,7 +341,7 @@ default: throw new Exception("Tipo de búsqueda no permitido");
        String resultado[]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -397,7 +397,7 @@ default: throw new Exception("Tipo de búsqueda no permitido");
                 //System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -424,7 +424,7 @@ default: throw new Exception("Tipo de búsqueda no permitido");
         String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -474,7 +474,7 @@ default: throw new Exception("Tipo de búsqueda no permitido");
        String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -534,7 +534,7 @@ default: throw new Exception("Tipo de búsqueda no permitido");
 // System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -559,7 +559,7 @@ default: throw new Exception("Tipo de búsqueda no permitido");
        String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -609,7 +609,7 @@ default: throw new Exception("Tipo de búsqueda no permitido");
 //System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -652,7 +652,7 @@ default: throw new Exception("Tipo de búsqueda no permitido");
 //            System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -707,7 +707,7 @@ query+="END;\n";
 //System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -807,7 +807,7 @@ query+="END;\n";
 //System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -865,7 +865,7 @@ query+="END;\n";
 //System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -893,7 +893,7 @@ query+="FROM T_F_PRODUCTO_ADICIONAL WHERE CEDULA_CONTACTO='"+pcedContacto+"'\n";
        String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -941,7 +941,7 @@ query+="FROM T_F_PRODUCTO_ADICIONAL WHERE CEDULA_CONTACTO='"+pcedContacto+"'\n";
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -982,7 +982,7 @@ String resultado[][]=null;
         query+="FROM T_USUARIO WHERE COD_USUARIO='STT32'\n";
         boolean resultado=false;
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1041,13 +1041,14 @@ query+="ON IA.CEDULA_CONTACTO=F.CEDULA_CONTACTO AND IA.COD_IDENTIFICADOR='PLAN'\
 query+="LEFT JOIN T_IDENTIFICADOR IB\n";
 query+="ON IB.CEDULA_CONTACTO=F.CEDULA_CONTACTO AND IB.COD_IDENTIFICADOR='NACIMIENTO'\n";
 query+="JOIN T_USUARIO U ON U.COD_USUARIO=F.COD_USUARIO\n";
+if (!pfecha.equals("")){query+="  WHERE HORA_VENTA LIKE '"+pfecha+"%'\n";}
 query+="ORDER BY to_date(HORA_VENTA,'DD/MM/YYYY HH:MI AM'),CEDULA_CONTACTO\n";
 
 System.out.println(query);
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -1105,7 +1106,7 @@ System.out.println(query);
        String resultado[]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -1143,7 +1144,7 @@ query+="  TARJETA_CONTACTO,\n";
 query+="  CASE \n";
 query+="    WHEN IA.COD_IDENTIFICADOR IS NULL THEN 'N/A' ELSE IA.DESC_IDENTIFICADOR\n";
 query+="  END AS PLAN_TARJETA,\n";
-query+="  IA.CEDULA_CONTACTO,\n";
+query+="  F.CEDULA_CONTACTO,\n";
 query+="  NOMBRE_CONTACTO,\n";
 query+="  PRODUCTO,\n";
 query+="  TIPO_PRODUCTO,\n";
@@ -1161,12 +1162,12 @@ query+="ON IB.CEDULA_CONTACTO=F.CEDULA_CONTACTO AND IB.COD_IDENTIFICADOR='NACIMI
 query+="JOIN T_USUARIO U ON U.COD_USUARIO=F.COD_USUARIO\n";
 query+="WHERE\n";
 query+=" SALES_ADMINISTRATION='ENVIAR'\n";
-query+="ORDER BY to_date(HORA_VENTA,'DD/MM/YYYY HH:MI AM'),IA.CEDULA_CONTACTO\n";
+query+="ORDER BY to_date(HORA_VENTA,'DD/MM/YYYY HH:MI AM'),F.CEDULA_CONTACTO\n";
 System.out.println(query);
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -1239,7 +1240,7 @@ System.out.println(query);
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -1302,7 +1303,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1346,7 +1347,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1391,7 +1392,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1414,7 +1415,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1447,7 +1448,7 @@ query+="  CASE WHEN FECHA_DEVOLUCION_POR_CONTROL IS NULL THEN 'PENDIENTE' ELSE F
 query+="  CASE WHEN FECHA_ENTREGADO_A_CONTROL IS NULL THEN 'PENDIENTE' ELSE FECHA_ENTREGADO_A_CONTROL END AS FECHA_ENTREGADO_A_CONTROL\n";
 query+="FROM T_F_CARGO_AUTOMATICO F\n";
 query+="JOIN T_USUARIO U ON F.COD_USUARIO=U.COD_USUARIO\n";
-if (!pfecha.equals("")){query+="  AND HORA_VENTA LIKE '"+pfecha+"%'\n";}
+if (!pfecha.equals("")){query+="  WHERE HORA_VENTA LIKE '"+pfecha+"%'\n";}
 query+="ORDER BY to_date(HORA_VENTA,'DD/MM/YYYY HH:MI AM'),CEDULA_CONTACTO\n";
 
 
@@ -1455,7 +1456,7 @@ System.out.println(query);
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -1511,7 +1512,7 @@ System.out.println(query);
        String resultado[]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -1563,7 +1564,7 @@ System.out.println(query);
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -1623,7 +1624,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1656,7 +1657,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1701,7 +1702,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1724,7 +1725,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1747,7 +1748,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -1766,6 +1767,7 @@ System.out.println(query);
 String query="SELECT DISTINCT \n";
 query+="TB.CEDULA_CONTACTO,\n";
 query+="C.NOMBRE_CONTACTO,\n";
+query+="C.NOMBRE_BASE,\n";
 query+="TB.ESTATUS_TELEFONO,\n";
 query+="TB.COD_USUARIO,\n";
 query+="CASE WHEN TB.FECHA_PROMESA IS NOT NULL THEN TB.FECHA_PROMESA  ELSE ' ' END AS FECHA_PROMESA,\n";
@@ -1775,15 +1777,15 @@ query+="CASE WHEN IC.desc_identificador IS  NOT NULL  THEN  IC.desc_identificado
 query+="CASE WHEN ID.desc_identificador IS  NOT NULL  THEN  ID.desc_identificador ELSE ' ' END as vencimiento,\n";
 query+="MIN(TA.PRIORIDAD_A) AS PRIORIDAD_PROMESA,\n";
 query+="CASE WHEN MIN(TA.PRIORIDAD_A)=1 THEN '01 VENTA' ELSE\n";
-query+="  CASE WHEN MIN(TA.PRIORIDAD_A)=2 THEN '04 NO LE INTERESA' ELSE\n";
-query+="    CASE WHEN MIN(TA.PRIORIDAD_A)=3 THEN '07 NO APLICA' ELSE\n";
-query+="      CASE WHEN MIN(TA.PRIORIDAD_A)=4 THEN '09 CLIENTE MOLESTO' ELSE\n";
-query+="        CASE WHEN MIN(TA.PRIORIDAD_A)=5 THEN '06 NUMEROS NO CORRESPONDEN' ELSE\n";
-query+="          CASE WHEN MIN(TA.PRIORIDAD_A)=6 THEN '02 SEGUIMIENTO DE VENTA' ELSE\n";
-query+="            CASE WHEN MIN(TA.PRIORIDAD_A)=7 THEN '03 VOLVER A LLAMAR' ELSE\n";
-query+="              CASE WHEN MIN(TA.PRIORIDAD_A)=8 THEN '05 NO ESTA (REINTENTAR)' ELSE\n";
-query+="                CASE WHEN MIN(TA.PRIORIDAD_A)=9 THEN '08 ILOCALIZABLE (POR HORARIO)' ELSE\n";
-query+="                  CASE WHEN MIN(TA.PRIORIDAD_A)=10 THEN 'SIN PROMESA' ELSE\n";
+query+="  CASE WHEN MIN(TA.PRIORIDAD_A)=2 THEN '02 SEGUIMIENTO DE VENTA' ELSE\n";
+query+="    CASE WHEN MIN(TA.PRIORIDAD_A)=3 THEN '03 VOLVER A LLAMAR' ELSE\n";
+query+="      CASE WHEN MIN(TA.PRIORIDAD_A)=4 THEN '04 NO LE INTERESA' ELSE\n";
+query+="        CASE WHEN MIN(TA.PRIORIDAD_A)=5 THEN '07 NO APLICA' ELSE\n";
+query+="          CASE WHEN MIN(TA.PRIORIDAD_A)=6 THEN '05 NO ESTA (REINTENTAR)' ELSE \n";
+query+="            CASE WHEN MIN(TA.PRIORIDAD_A)=7 THEN '09 CLIENTE MOLESTO' ELSE\n";
+query+="              CASE WHEN MIN(TA.PRIORIDAD_A)=8 THEN '08 ILOCALIZABLE (POR HORARIO)' ELSE\n";
+query+="                CASE WHEN MIN(TA.PRIORIDAD_A)=9 THEN 'N/A' ELSE\n";
+query+="                  CASE WHEN MIN(TA.PRIORIDAD_A)=10 THEN '06 NUMEROS NO CORRESPONDEN' ELSE\n";
 query+="                  'N/A'\n";
 query+="                  END END END END END END END END END END AS PROMESA_GENERAL\n";
 query+="FROM (\n";
@@ -1795,16 +1797,16 @@ query+="        TA.COD_USUARIO,\n";
 query+="        TO_DATE(TA.FECHA_PROMESA,'DD/MM/YYYY HH:MI AM'),\n";
 query+="        MIN(\n";
 query+="          CASE WHEN TA.COD_PROMESA='21' THEN 1 ELSE\n";
-query+="            CASE WHEN TA.COD_PROMESA='22' THEN 6 ELSE\n";
-query+="              CASE WHEN TA.COD_PROMESA='35' OR TA.COD_PROMESA='36' THEN 4 ELSE\n";
-query+="                CASE WHEN TA.COD_PROMESA='31' THEN 5  ELSE\n";
-query+="                  CASE WHEN TA.COD_PROMESA='23'  THEN 7  ELSE\n";
-query+="                    CASE WHEN TA.COD_PROMESA='32' OR TA.COD_PROMESA='33' THEN 3  ELSE\n";
-query+="                      CASE WHEN TA.COD_PROMESA='24' OR TA.COD_PROMESA='25'OR TA.COD_PROMESA='26'OR TA.COD_PROMESA='27'OR TA.COD_PROMESA='28'OR TA.COD_PROMESA='29' THEN 2 ELSE \n";
-query+="                        CASE WHEN TA.COD_PROMESA='30' THEN 8 ELSE\n";
-query+="                          CASE WHEN TA.COD_PROMESA='34' THEN 9 ELSE\n";
-query+="                            CASE WHEN TA.COD_PROMESA='20' THEN 10 ELSE \n";
-query+="11\n";
+query+="            CASE WHEN TA.COD_PROMESA='22' THEN 2 ELSE\n";
+query+="              CASE WHEN TA.COD_PROMESA='35' OR TA.COD_PROMESA='36' THEN 7 ELSE\n";
+query+="                CASE WHEN TA.COD_PROMESA='31' THEN 10  ELSE\n";
+query+="                  CASE WHEN TA.COD_PROMESA='23'  THEN 3  ELSE\n";
+query+="                    CASE WHEN TA.COD_PROMESA='32' OR TA.COD_PROMESA='33' THEN 5  ELSE\n";
+query+="                      CASE WHEN TA.COD_PROMESA='24' OR TA.COD_PROMESA='25'OR TA.COD_PROMESA='26'OR TA.COD_PROMESA='27'OR TA.COD_PROMESA='28'OR TA.COD_PROMESA='29' THEN 4 ELSE \n";
+query+="                        CASE WHEN TA.COD_PROMESA='30' THEN 6 ELSE\n";
+query+="                          CASE WHEN TA.COD_PROMESA='34' THEN 8 ELSE\n";
+query+="                            CASE WHEN TA.COD_PROMESA='20' THEN 9 ELSE\n";
+query+="                                11\n";
 query+="                            END END END END END END END END END END \n";
 query+="        )AS PRIORIDAD_A\n";
 query+="        FROM T_TELEFONO TA\n";
@@ -1844,7 +1846,7 @@ System.out.println(query);
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -1860,13 +1862,14 @@ String resultado[][]=null;
              while (rs.next()){
                  resultado[j][0]=rs.getObject("CEDULA_CONTACTO").toString();
                  resultado[j][1]=rs.getObject("NOMBRE_CONTACTO").toString();
-                 resultado[j][2]=rs.getObject("PLAN").toString();
-                 resultado[j][3]=rs.getObject("METAL").toString();
-                 resultado[j][4]=rs.getObject("LIMITE").toString();
-                 resultado[j][5]=rs.getObject("VENCIMIENTO").toString();
-                 resultado[j][6]=rs.getObject("PROMESA_GENERAL").toString();
-                 resultado[j][7]=rs.getObject("FECHA_PROMESA").toString();
-                 resultado[j][8]=rs.getObject("ESTATUS_TELEFONO").toString();
+                 resultado[j][2]=rs.getObject("NOMBRE_BASE").toString();
+                 resultado[j][3]=rs.getObject("PLAN").toString();
+                 resultado[j][4]=rs.getObject("METAL").toString();
+                 resultado[j][5]=rs.getObject("LIMITE").toString();
+                 resultado[j][6]=rs.getObject("VENCIMIENTO").toString();
+                 resultado[j][7]=rs.getObject("PROMESA_GENERAL").toString();
+                 resultado[j][8]=rs.getObject("FECHA_PROMESA").toString();
+                 resultado[j][9]=rs.getObject("ESTATUS_TELEFONO").toString();
                  
                  j++;  
              } 
@@ -1906,7 +1909,7 @@ System.out.println(query);
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -2021,7 +2024,7 @@ query+="END;\n";
 System.out.println(query);
                 
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement();
          try {
@@ -2037,7 +2040,6 @@ System.out.println(query);
     }
     
     public String[][] getAuditarIntraExtra(String pfecha)throws Exception{  
-
 String query="SELECT DISTINCT\n";
 query+="  HORA_VENTA,\n";
 query+="  CANAL_VENTA,\n";
@@ -2071,7 +2073,7 @@ System.out.println(query);
 String resultado[][]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -2140,7 +2142,7 @@ System.out.println(query);
        String resultado[]=null;
        
        Class.forName ("oracle.jdbc.OracleDriver");
-       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.5.2:1521:STTCR", "Callcenter", "Call887795zty");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
        try {
          Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
          try {
@@ -2169,4 +2171,121 @@ System.out.println(query);
        }
     return resultado;    
     }
+    
+
+    
+    public boolean validaDuplicadosPPT_Alerta(String ptarjeta)throws Exception{
+String query="SELECT DISTINCT\n";
+query+="'DUPLICADO' AS STATUS_VENTA\n";
+query+="FROM T_F_PRODUCTO_ADICIONAL\n";
+query+="WHERE TARJETA_CONTACTO='"+ptarjeta+"'\n";
+
+System.out.println(query);
+       boolean resultado=true;
+       Class.forName ("oracle.jdbc.OracleDriver");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
+       try {
+         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+         try {
+           ResultSet rs = stmt.executeQuery(query);
+           try{
+             while (rs.next()){
+                 resultado=false;               
+             } 
+           }catch (Exception ex){
+               System.out.println("baja por no data");
+           }
+           finally {
+                  rs.close(); 
+           }
+         } 
+         finally {
+               stmt.close(); 
+         }
+       } 
+       finally {
+             conn.close(); 
+       }
+    return resultado;    
+    }
+    
+    public boolean validaDuplicadosFinanciamiento(String ptarjeta, String pproducto)throws Exception{
+String query="SELECT DISTINCT\n";
+query+="'DUPLICADO' AS STATUS_VENTA\n";
+query+="FROM T_F_FINANCIAMIENTO\n";
+query+="WHERE\n";
+query+="TARJETA_CONTACTO='"+ptarjeta+"'\n";
+query+="AND\n";
+query+="PRODUCTO='"+pproducto+"'\n";
+
+
+System.out.println(query);
+       boolean resultado=true;
+       Class.forName ("oracle.jdbc.OracleDriver");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
+       try {
+         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+         try {
+           ResultSet rs = stmt.executeQuery(query);
+           try{
+             while (rs.next()){
+                 resultado=false;               
+             } 
+           }catch (Exception ex){
+               System.out.println("baja por no data");
+           }
+           finally {
+                  rs.close(); 
+           }
+         } 
+         finally {
+               stmt.close(); 
+         }
+       } 
+       finally {
+             conn.close(); 
+       }
+    return resultado;    
+    }
+    
+    public boolean validaDuplicadosCAU(String ptarjeta, String pproducto, String pIdProducto)throws Exception{
+String query="SELECT DISTINCT\n";
+query+="'DUPLICADO' AS STATUS_VENTA\n";
+query+="FROM T_F_CARGO_AUTOMATICO\n";
+query+="WHERE\n";
+query+="TARJETA_CONTACTO='"+ptarjeta+"' \n";
+query+="AND\n";
+query+="CODIGO_SERVICIO='"+pIdProducto+"' \n";
+query+="AND\n";
+query+="TIPO_PRODUCTO='"+pproducto+"'\n";
+
+System.out.println(query);
+       boolean resultado=true;
+       Class.forName ("oracle.jdbc.OracleDriver");
+       Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.30.6:1521:STTCR", "Callcenter", "Call887795zty");
+       try {
+         Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+         try {
+           ResultSet rs = stmt.executeQuery(query);
+           try{
+             while (rs.next()){
+                 resultado=false;               
+             } 
+           }catch (Exception ex){
+               System.out.println("baja por no data");
+           }
+           finally {
+                  rs.close(); 
+           }
+         } 
+         finally {
+               stmt.close(); 
+         }
+       } 
+       finally {
+             conn.close(); 
+       }
+    return resultado;    
+    }
+
 }

@@ -85,6 +85,8 @@ if (TipoArranque==0){
     
     cmbIdentificadores.setModel(new javax.swing.DefaultComboBoxModel(objGestorV.getIdentificadores()));
     
+    lblBase.setText("Base:"+objGestorV.getNombre_Base_Contacto());
+    
     lstTelefonos.setModel(new javax.swing.AbstractListModel() {
             String[] strings = llamada[1];
             public int getSize() { return strings.length; }
@@ -137,6 +139,7 @@ if (TipoArranque==0){
         lstResultados = new javax.swing.JList();
         jLabel4 = new javax.swing.JLabel();
         btnSalvar = new javax.swing.JButton();
+        lblBase = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         cmbProductos = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -272,6 +275,8 @@ if (TipoArranque==0){
             }
         });
 
+        lblBase.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -288,7 +293,9 @@ if (TipoArranque==0){
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbIdentificadores, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblBase)
+                                    .addComponent(cmbIdentificadores, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(97, 97, 97)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -310,7 +317,7 @@ if (TipoArranque==0){
                 .addGap(17, 17, 17)
                 .addComponent(lblNombreContacto)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -328,7 +335,9 @@ if (TipoArranque==0){
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel14)
-                            .addComponent(cmbIdentificadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(cmbIdentificadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblBase)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtTelefonoNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -482,7 +491,7 @@ if (TipoArranque==0){
                             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -705,13 +714,14 @@ try{
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        
         try{
-        String cédula, nombre, comentario;
+        String cedula, nombre, comentario;
         comentario=JOptionPane.showInputDialog("Ingrese un comentario distintivo para reservar este contacto: ");
         if(!comentario.equals("")){
                    
-                        cédula=llamada[0][0];
-                        nombre=objGestorV.getContactos()[1];
-                        objGestorV.Llamada_Agendar(cédula,nombre,comentario,"");
+            cedula=llamada[0][0];
+            objGestorV.btn_EliminaAgendado(cedula,objGestorV.getDatosCod_UsuarioIU());
+            nombre=objGestorV.getContactos()[1];
+            objGestorV.Llamada_Agendar(cedula,nombre,comentario,"");
                
                 
                 try{
@@ -777,6 +787,7 @@ try{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblBase;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblCodCuenta;
     private javax.swing.JLabel lblCuenta;
