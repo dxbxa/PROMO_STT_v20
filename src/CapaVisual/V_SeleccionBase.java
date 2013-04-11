@@ -40,7 +40,7 @@ private int seleccion;
             tblSeleccionBase.getColumnModel().getColumn(1).setPreferredWidth(250);
             tblSeleccionBase.getColumnModel().getColumn(2).setPreferredWidth(100);
             tblSeleccionBase.getColumnModel().getColumn(3).setPreferredWidth(100);
-            tblSeleccionBase.getColumnModel().getColumn(4).setPreferredWidth(250);
+            tblSeleccionBase.getColumnModel().getColumn(4).setPreferredWidth(350);
             tblSeleccionBase.getColumnModel().getColumn(5).setPreferredWidth(100);
             tblSeleccionBase.getColumnModel().getColumn(6).setPreferredWidth(100);
             tblSeleccionBase.getColumnModel().getColumn(7).setPreferredWidth(250);
@@ -88,7 +88,7 @@ private int seleccion;
             }
         ));
         tblSeleccionBase.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        tblSeleccionBase.setPreferredSize(new java.awt.Dimension(1350, 11000));
+        tblSeleccionBase.setPreferredSize(new java.awt.Dimension(1350, 40000));
         jScrollPane2.setViewportView(tblSeleccionBase);
 
         jButton2.setText("Regresar");

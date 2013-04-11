@@ -174,6 +174,10 @@ public class A_Gestor_Visual{
 
     }
     
+    public String getRol(){
+        return objGestorL.getDatosRol_UsuarioIU();
+    }
+    
     public void btn_Ingresar(String pusuario, String pPassword)throws Exception{
         Login_setDatosUsuario(pusuario,pPassword);
         if(objGestorL.getDatosRol_UsuarioIU().equals("asesor")){
@@ -181,7 +185,7 @@ public class A_Gestor_Visual{
             ventanaLogin.setVisible(false);
             ventanaMenu.setVisible(true);
         }
-        if(objGestorL.getDatosRol_UsuarioIU().equals("QA")){
+        if(objGestorL.getDatosRol_UsuarioIU().equals("QA")||objGestorL.getDatosRol_UsuarioIU().equals("supervisor")){
             ventanaMenuQA= new V_MenuQA(objGestorV);
             ventanaLogin.setVisible(false);
             ventanaMenuQA.setVisible(true);
@@ -201,7 +205,8 @@ public class A_Gestor_Visual{
         ventanaMenu.setVisible(false);
         ventanaLlamadas.setVisible(true);
     }
-        public void btn_BuscarsELECCION(int tipoBusqueda,String valor){
+    
+    public void btn_BuscarsELECCION(int tipoBusqueda,String valor){
         ventanaLlamadas= new V_Llamadas(objGestorV,tipoBusqueda,valor,1);
         ventanaSeleccionBase.setVisible(false);
         ventanaLlamadas.setVisible(true);
@@ -286,7 +291,7 @@ public class A_Gestor_Visual{
     public boolean getValidacionClave(String clave)throws Exception{
         return objGestorL.getValidacionClave(clave);
     }
-     
+    
     public void guardaFormularioFinanciamientosV(String pproducto,String ptipo,String pcod_usuario,String ptarjeta,String pnombre_contacto,String pcedula,String pmonto_d,String pmoneda_d,String pcomision,String ptasa,String pseguro,String psinpe,String ptelefono,String pbanco,String pmoneda_banco,String pvencimiento,String pcuota,String pplazo)throws Exception{
         objGestorL.guardaFormularioFinanciamientosL(pproducto, ptipo, pcod_usuario, ptarjeta, pnombre_contacto, pcedula, pmonto_d, pmoneda_d, pcomision, ptasa, pseguro, psinpe, ptelefono, pbanco, pmoneda_banco, pvencimiento, pcuota, pplazo);
     }
@@ -294,21 +299,46 @@ public class A_Gestor_Visual{
     public String[][] getResumenFinanciamiento(String pasesor,String pcedula)throws Exception{
          return objGestorL.getResumenFinanciamiento(pasesor, pcedula);
      }
+
     public String[][] getDatosAuditarPPT(String pfecha)throws Exception{
         return objGestorL.AuditarPPT(pfecha);
+    }
+    
+    public String[][] getDatosAuditarPPT_X_cedula(String pcedula)throws Exception{
+        return objGestorL.AuditarPPT_X_cedula(pcedula);
     }
     public String[] getFechasPPT()throws Exception{
         return objGestorL.getFechasPPT();
     }
-    public String[][] traer_Todo_CD_PPT()throws Exception{
-        return objGestorL.traer_Todo_CD_PPT();
+    public String[][] traer_Todo_CD_PPT(String pfecha)throws Exception{
+        return objGestorL.traer_Todo_CD_PPT(pfecha);
     }
     public void enviar_CD_PPT(String phora_venta,String pcodCue)throws Exception{
         objGestorL.enviar_CD_PPT(phora_venta, pcodCue);
     }
-    public void salvar_Llamada_Auditada_PPT(String pfecha,String pcod_cue,String previsada_por,String pstatus_control,String pdevolucion,String pregreso)throws Exception{
-        objGestorL.salvar_Llamada_Auditada_PPT(pfecha, pcod_cue, previsada_por, pstatus_control, pdevolucion, pregreso);
+    
+    public void salvar_Llamada_Auditada_PPT(String pfecha,String pcod_cue,String previsada_por,String pstatus_control,String pcomentario, int ptipo)throws Exception{
+        objGestorL.salvar_Llamada_Auditada_PPT(pfecha, pcod_cue, previsada_por, pstatus_control, pcomentario,ptipo);
     }
+    public void salvar_Llamada_Auditada_CAU(String pfecha,String ptarjeta,String previsada_por,String pstatus_control,String pcomentario, int ptipo)throws Exception{
+        objGestorL.salvar_Llamada_Auditada_CAU(pfecha, ptarjeta, previsada_por, pstatus_control, pcomentario, ptipo);
+    }
+    public void salvar_Llamada_Auditada_E_I(String pfecha,String ptarjeta,String previsada_por,String pstatus_control,String pcomentario,int ptipo)throws Exception{
+        objGestorL.salvar_Llamada_Auditada_E_I(pfecha, ptarjeta, previsada_por, pstatus_control, pcomentario, ptipo);
+    }  
+    
+    public void salvar_Llamada_Auditada_PPT_SUPERVISOR(String pfecha,String pcod_cue,String pstatus_control, int ptipo)throws Exception{
+        objGestorL.salvar_Llamada_Auditada_PPT_SUPERVISOR(pfecha, pcod_cue, pstatus_control,ptipo);
+    }
+    public void salvar_Llamada_Auditada_CAU_SUPERVISOR(String pfecha,String ptarjeta,String pstatus_control,int ptipo)throws Exception{
+        objGestorL.salvar_Llamada_Auditada_CAU_SUPERVISOR(pfecha, ptarjeta, pstatus_control,ptipo);
+    }
+    public void salvar_Llamada_Auditada_E_I_SUPERVISOR(String pfecha,String ptarjeta,String pstatus_control,int ptipo)throws Exception{
+        objGestorL.salvar_Llamada_Auditada_E_I_SUPERVISOR(pfecha, ptarjeta, pstatus_control,ptipo);
+    }  
+    
+    
+    
     public void reset_CD_PPT()throws Exception{
         objGestorL.reset_CD_PPT();
     }
@@ -317,17 +347,17 @@ public class A_Gestor_Visual{
     public String[][] getDatosAuditarCAU(String pfecha)throws Exception{
         return objGestorL.AuditarCAU(pfecha);
     }
+    public String[][] getDatosAuditarCAU_X_cedula(String pcedula)throws Exception{
+        return objGestorL.AuditarCAU_X_cedula(pcedula);
+    }
     public String[] getFechasCAU()throws Exception{
         return objGestorL.getFechasCAU();
     }
-    public String[][] traer_Todo_CD_CAU()throws Exception{
-        return objGestorL.traer_Todo_CD_CAU();
+    public String[][] traer_Todo_CD_CAU(String pfecha)throws Exception{
+        return objGestorL.traer_Todo_CD_CAU(pfecha);
     }
     public void enviar_CD_CAU(String phora_venta,String pcodCue)throws Exception{
         objGestorL.enviar_CD_CAU(phora_venta, pcodCue);
-    }
-    public void salvar_Llamada_Auditada_CAU(String pfecha,String pcod_cue,String previsada_por,String pstatus_control,String pdevolucion,String pregreso)throws Exception{
-        objGestorL.salvar_Llamada_Auditada_CAU(pfecha, pcod_cue, previsada_por, pstatus_control, pdevolucion, pregreso);
     }
     public void reset_CD_CAU()throws Exception{
         objGestorL.reset_CD_CAU();
@@ -342,22 +372,25 @@ public class A_Gestor_Visual{
         return objGestorL.getAuditarIntraExtra(pfecha);
     }
     
+    public String[][] getAuditarIntraExtra_X_cedula(String pcedula)throws Exception{
+        return objGestorL.getAuditarIntraExtra_X_cedula(pcedula);
+    }
+    
     public String[] buscaFechasFinanc()throws Exception{
         return objGestorL.buscaFechasFinanc();
     }
+    
     public void setCD_FINANC(String phora_venta,String ptarjeta)throws Exception{
         objGestorL.setCD_FINANC(phora_venta, ptarjeta);
     }
     
-      public void salvar_Llamada_Auditada_E_I(String pfecha,String ptarjeta,String previsada_por,String pstatus_control,String pdevolucion,String pregreso)throws Exception{
-        objGestorL.salvar_Llamada_Auditada_E_I(pfecha, ptarjeta, previsada_por, pstatus_control, pdevolucion, pregreso);
-    }  
+    
     public void reset_CD_FINANC()throws Exception{
         objGestorL.reset_CD_FINANC();
     }
     
-    public String[][] getCD_E_I()throws Exception{
-        return objGestorL.getCD_E_I();
+    public String[][] getCD_E_I(String pfecha)throws Exception{
+        return objGestorL.getCD_E_I(pfecha);
     }
     
     public boolean validaDuplicadosPPT_Alerta(String ptarjeta)throws Exception{

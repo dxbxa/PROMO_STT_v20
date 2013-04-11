@@ -28,6 +28,7 @@ public V_Llamadas(A_Gestor_Visual pobjGestorV,int TipoArranque,String pvalorBusc
     
     lblNombreProyecto.setText("Nombre del Proyecto: "+objGestorV.getDatosDesc_ProyectoIU());
     lblnombreAsesor.setText("Nombre del Usuario: "+objGestorV.getDatosNombre_UsuarioIU());
+    
     cargaContactos(TipoArranque,pvalorBuscado);
 
  

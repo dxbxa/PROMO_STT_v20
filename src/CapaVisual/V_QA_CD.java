@@ -21,16 +21,43 @@ public class V_QA_CD extends javax.swing.JFrame {
         this.setMaximizedBounds(env.getMaximumWindowBounds());
         this.setExtendedState(this.getExtendedState() | this.MAXIMIZED_BOTH);
         
+        llenaFechas();
+    try{
+        cmbFechasCD.setSelectedIndex(0);
+    }catch(Exception ex){
+        System.out.println(ex);
+    }
         llenaDatosLista();
 
     }
 
+    private void llenaFechas(){
+        
+        try{
+         if(tipo==1){
+         cmbFechasCD.setModel(new javax.swing.DefaultComboBoxModel(objGestorV.getFechasPPT()));
+         }
+         if(tipo==2){
+         cmbFechasCD.setModel(new javax.swing.DefaultComboBoxModel(objGestorV.getFechasCAU()));
+         }
+         if(tipo==4){
+         cmbFechasCD.setModel(new javax.swing.DefaultComboBoxModel(objGestorV.buscaFechasFinanc()));
+         }
+         
+        }catch (Exception ex){
+            System.out.println("llenaFechasCD"+ex);
+        }
+        
+    }
+
     private void llenaDatosLista(){
 try{
+
+    String fecha=cmbFechasCD.getSelectedItem().toString();
         if(tipo==1){
             String[] encabezadoA={"COD_CUENTA","TARJETA_CONTACTO","PLAN_TARJETA","CEDULA_CONTACTO","NOMBRE_CONTACTO","PRODUCTO","TIPO_PRODUCTO","NOMBRE_USUARIO","FECHA_VENTA","FECHA_NACIMIENTO","TELEFONO_CONTACTO"};
             String[][] contenidoA;
-            contenidoA=objGestorV.traer_Todo_CD_PPT();
+            contenidoA=objGestorV.traer_Todo_CD_PPT(fecha);
             tblcd.setModel(new javax.swing.table.DefaultTableModel(contenidoA,encabezadoA));
             tblcd.getColumnModel().getColumn(0).setPreferredWidth(200);
             tblcd.getColumnModel().getColumn(1).setPreferredWidth(200);
@@ -47,7 +74,7 @@ try{
           if(tipo==2){
             String[] encabezadoB={"NOMBRE_USUARIO","HORA_VENTA","NOMBRE_CONTACTO","CEDULA_CONTACTO","TARJETA_CONTACTO","NOMBRE_SUBSCRICTOR","UBICACION_SERVICIO","CODIGO_SERVICIO","TELEFONO_CONTACTO","TIPO_PRODUCTO"};
             String[][] contenidoB;
-            contenidoB=objGestorV.traer_Todo_CD_CAU();
+            contenidoB=objGestorV.traer_Todo_CD_CAU(fecha);
             tblcd.setModel(new javax.swing.table.DefaultTableModel(contenidoB,encabezadoB));
             tblcd.getColumnModel().getColumn(0).setPreferredWidth(200);
             tblcd.getColumnModel().getColumn(1).setPreferredWidth(200);
@@ -64,7 +91,7 @@ try{
             if(tipo==4){
             String[] encabezadoD={"FECHA_VENTA","NOMBRE_USUARIO","USUARIO","TARJETA_CONTACTO","NOMBRE_CONTACTO","CEDULA_CONTACTO","MONTO_DESEMBOLSO","MONEDA_DESEMBOLSO","PLAZO","SIGMA_7","SINPE","BANCO","VENCIMIENTO","TIPO"};
             String[][] contenidoD;
-            contenidoD=objGestorV.getCD_E_I();
+            contenidoD=objGestorV.getCD_E_I(fecha);
             tblcd.setModel(new javax.swing.table.DefaultTableModel(contenidoD,encabezadoD));
             tblcd.getColumnModel().getColumn(0).setPreferredWidth(200);
             tblcd.getColumnModel().getColumn(1).setPreferredWidth(200);
@@ -96,7 +123,8 @@ try{
         jScrollPane2 = new javax.swing.JScrollPane();
         tblcd = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cmbFechasCD = new javax.swing.JComboBox();
+        btnBuscarFechaCD = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,10 +154,10 @@ try{
             }
         });
 
-        jButton2.setText("Reset");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscarFechaCD.setText("Búsqueda por fecha");
+        btnBuscarFechaCD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnBuscarFechaCDActionPerformed(evt);
             }
         });
 
@@ -140,27 +168,30 @@ try{
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(38, 38, 38)
+                        .addComponent(cmbFechasCD, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscarFechaCD, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(62, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addGap(27, 27, 27)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cmbFechasCD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarFechaCD))
+                .addGap(58, 58, 58)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -181,31 +212,14 @@ try{
        objGestorV.btn_Regresar_a_MenuQA(this);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        try{
-        
-        if(tipo==1){
-        objGestorV.reset_CD_PPT(); 
+    private void btnBuscarFechaCDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarFechaCDActionPerformed
         llenaDatosLista();
-        }
-        
-        if(tipo==2){
-        objGestorV.reset_CD_CAU(); 
-        llenaDatosLista();
-        }
-        if(tipo==4){
-        objGestorV.reset_CD_FINANC(); 
-        llenaDatosLista();
-        }
-            
-        }catch (Exception ex){
-            System.out.println(ex);
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnBuscarFechaCDActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscarFechaCD;
+    private javax.swing.JComboBox cmbFechasCD;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;

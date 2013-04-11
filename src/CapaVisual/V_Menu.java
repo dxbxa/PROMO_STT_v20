@@ -334,7 +334,7 @@ public class V_Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void buscar(){
-                String cedula=txtcedula_busqueda.getText();
+        String cedula=txtcedula_busqueda.getText();
         String tarjeta=txtTarjeta_busqueda.getText();
         String nombre=txtNombre_busqueda.getText();
         

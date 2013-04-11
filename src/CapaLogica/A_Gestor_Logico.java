@@ -225,26 +225,36 @@ public class A_Gestor_Logico {
     public String[] getFechasPPT()throws Exception{
         return objConexion.buscaFechasPPT();
     }
+    
     public String[][] AuditarPPT(String pfecha)throws Exception{
         String [][] auditar=objConexion.getAuditarPPT(pfecha);
         return auditar;
     }
-    public String[][] traer_Todo_CD_PPT()throws Exception{
-        return objConexion.getCD_PPT();
+    public String[][] AuditarPPT_X_cedula(String pcedula)throws Exception{
+        String [][] auditar=objConexion.getAuditarPPT_X_cedula(pcedula);
+        return auditar;
+    }
+    
+    public String[][] traer_Todo_CD_PPT(String pfecha)throws Exception{
+        return objConexion.getCD_PPT(pfecha);
     }
     public void enviar_CD_PPT(String phora_venta,String pcodCue)throws Exception{
         objConexion.setCD_PPT(phora_venta, pcodCue);
     }
-    public void salvar_Llamada_Auditada_PPT(String pfecha,String pcod_cue,String previsada_por,String pstatus_control,String pdevolucion,String pregreso)throws Exception{
-        objConexion.salvaAuditoriaPPT(pfecha, pcod_cue, previsada_por, pstatus_control, pdevolucion, pregreso);
+    public void salvar_Llamada_Auditada_PPT(String pfecha,String pcod_cue,String previsada_por,String pstatus_control,String pcomentario,int ptipo)throws Exception{
+        objConexion.salvaAuditoriaPPT(pfecha, pcod_cue, previsada_por, pstatus_control, pcomentario,ptipo);
     }
-    public void salvar_Llamada_Auditada_E_I(String pfecha,String ptarjeta,String previsada_por,String pstatus_control,String pdevolucion,String pregreso)throws Exception{
-        objConexion.salvar_Llamada_Auditada_E_I(pfecha, ptarjeta, previsada_por, pstatus_control, pdevolucion, pregreso);
+    public void salvar_Llamada_Auditada_CAU(String pfecha,String ptarjeta,String previsada_por,String pstatus_control,String pcomentario,int ptipo)throws Exception{
+        objConexion.salvaAuditoriaCAU(pfecha, ptarjeta, previsada_por, pstatus_control, pcomentario, ptipo);
     }
+    public void salvar_Llamada_Auditada_E_I(String pfecha,String ptarjeta,String previsada_por,String pstatus_control,String pcomentario,int ptipo)throws Exception{
+        objConexion.salvar_Llamada_Auditada_E_I(pfecha, ptarjeta, previsada_por, pstatus_control, pcomentario, ptipo);
+    }
+    
     public void reset_CD_PPT()throws Exception{
         objConexion.reset_cd_ppt();
     }
-public void setCD_FINANC(String phora_venta,String ptarjeta)throws Exception{
+    public void setCD_FINANC(String phora_venta,String ptarjeta)throws Exception{
         objConexion.setCD_FINANC(phora_venta, ptarjeta);
     }
     public String[] getFechasCAU()throws Exception{
@@ -254,20 +264,21 @@ public void setCD_FINANC(String phora_venta,String ptarjeta)throws Exception{
         String [][] auditar=objConexion.getAuditarCAU(pfecha);
         return auditar;
     }
-    public String[][] traer_Todo_CD_CAU()throws Exception{
-        return objConexion.getCD_CAU();
+    public String[][] AuditarCAU_X_cedula(String pcedula)throws Exception{
+        String [][] auditar=objConexion.getAuditarCAU_X_CEDULA(pcedula);
+        return auditar;
+    }
+    public String[][] traer_Todo_CD_CAU(String pfecha)throws Exception{
+        return objConexion.getCD_CAU(pfecha);
     }
     
-    public String[][] getCD_E_I()throws Exception{
-        return objConexion.getCD_E_I();
+    public String[][] getCD_E_I(String pfecha)throws Exception{
+        return objConexion.getCD_E_I(pfecha);
     }
     
     
     public void enviar_CD_CAU(String phora_venta,String ptarjeta)throws Exception{
         objConexion.setCD_CAU(phora_venta, ptarjeta);
-    }
-    public void salvar_Llamada_Auditada_CAU(String pfecha,String ptarjeta,String previsada_por,String pstatus_control,String pdevolucion,String pregreso)throws Exception{
-        objConexion.salvaAuditoriaCAU(pfecha, ptarjeta, previsada_por, pstatus_control, pdevolucion, pregreso);
     }
     public void reset_CD_CAU()throws Exception{
         objConexion.reset_cd_CAU();
@@ -309,10 +320,11 @@ public void setCD_FINANC(String phora_venta,String ptarjeta)throws Exception{
     
     // <editor-fold defaultstate="collapsed" desc="METODOS GUARDAR">
     public boolean Guardar(String [][] pdatos)throws Exception{
+       String fecha=objConexion.getFecha();
+        
        for(int i=0;i<pdatos[0].length;i++){
-           objConexion.GuardarLlamada(pdatos[0][i], pdatos[1][i], pdatos[2][i], pdatos[3][i], objUsuario.getUSER_NAME());
+           objConexion.GuardarLlamada(pdatos[0][i], pdatos[1][i], pdatos[2][i], pdatos[3][i], objUsuario.getUSER_NAME(),fecha);
        }
-                
        return true;
     } 
     
@@ -364,6 +376,9 @@ public void setCD_FINANC(String phora_venta,String ptarjeta)throws Exception{
     public String[][] getAuditarIntraExtra(String pfecha)throws Exception{
         return objConexion.getAuditarIntraExtra(pfecha);
     }
+    public String[][] getAuditarIntraExtra_X_cedula(String pcedula)throws Exception{
+        return objConexion.getAuditarIntraExtra_X_CEDULA(pcedula);
+    }
     public String[] buscaFechasFinanc()throws Exception{
         return objConexion.buscaFechasFinanc();
     }
@@ -381,5 +396,17 @@ return objConexion.validaDuplicadosFinanciamiento(ptarjeta, pproducto);
     public boolean validaDuplicadosCAU(String ptarjeta, String pproducto, String pIdProducto)throws Exception{
 return objConexion.validaDuplicadosCAU(ptarjeta, pproducto, pIdProducto);   
     }
+    
+    
+    public void salvar_Llamada_Auditada_PPT_SUPERVISOR(String pfecha,String pcod_cue,String pstatus_control,int ptipo)throws Exception{
+        objConexion.salvaAuditoriaPPT_SUPERVISOR(pfecha, pcod_cue, pstatus_control, ptipo);
+    }
+    public void salvar_Llamada_Auditada_CAU_SUPERVISOR(String pfecha,String ptarjeta,String pstatus_control,int ptipo)throws Exception{
+        objConexion.salvaAuditoriaCAU_SUPERVISOR(pfecha, ptarjeta, pstatus_control, ptipo);
+    }
+    public void salvar_Llamada_Auditada_E_I_SUPERVISOR(String pfecha,String ptarjeta,String pstatus_control,int ptipo)throws Exception{
+        objConexion.salvar_Llamada_Auditada_E_I_SUPERVISOR(pfecha, ptarjeta, pstatus_control, ptipo);
+    }
+    
 
 }
