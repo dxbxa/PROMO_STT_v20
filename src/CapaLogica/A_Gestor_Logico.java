@@ -8,7 +8,7 @@ public class A_Gestor_Logico {
     private U_Usuario objUsuario;
     private B_Base objBase;
     private C_Contacto objContacto;
-           
+    
     // <editor-fold defaultstate="collapsed" desc="METODOS del OBJETO USUARIO, PROYECTO, PROMESA, PRODUCTO, TIPO Y (BASE)">
     public void setDatosUsuarioIU(String pCod_Usuario, String pClave_Usuario)throws Exception{
             try{
